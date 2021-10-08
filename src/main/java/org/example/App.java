@@ -17,7 +17,7 @@ public class App
 
             String operator = userInputString();
 
-            long sum = mathCalculations(num1, num2, operator);
+            mathCalculation(num1, num2, operator);
 
             calculateOrQuit();
         }
@@ -41,7 +41,7 @@ public class App
         }
     }
 
-    public static Long mathCalculations(long num1, long num2, String operator) {
+    public static void mathCalculation(long num1, long num2, String operator) {
         long sum = 0;
 
         switch(operator) {
@@ -59,7 +59,6 @@ public class App
                 break;
         }
         System.out.println(num1 + " " + operator + " " + num2 + " = " + sum);
-        return sum;
     }
 
     public static String userInputString() {
