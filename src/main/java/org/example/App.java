@@ -13,11 +13,15 @@ public class App
 
         while(isPlaying) {
             long num1 = userInputInt();
-            long num2 = userInputInt();
 
             String operator = userInputString();
 
-            mathCalculation(num1, num2, operator);
+            long num2 = userInputInt();
+            if (num2 == 0 && operator.equals("/")) {
+                System.err.println("The second number can't be 0 in division");
+            } else {
+                mathCalculation(num1, num2, operator);
+            }
 
             calculateOrQuit();
         }
@@ -36,7 +40,7 @@ public class App
             } else if (decision.equals("c") || decision.equals("C")) {
                 isCalculateOrQuitPlaying = false;
             } else {
-                System.out.println("Not a supported character");
+                System.err.println("Not a supported character");
             }
         }
     }
@@ -72,7 +76,7 @@ public class App
             if (operator.equals("/") || operator.equals("*") || operator.equals("+") || operator.equals("-")) {
                 isUserInputStringPlaying = false;
             } else {
-                System.out.println("Not a supported character");
+                System.err.println("Not a supported character");
             }
         }
         return operator;
